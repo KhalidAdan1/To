@@ -1,10 +1,11 @@
 import { createContext } from 'react';
 
-export const defaultThemeContext = {
-  theme: 'light',
-  toggleTheme: () => {},
+type ThemeContextType = {
+  theme: 'light' | 'dark';
+  toggleTheme: () => void;
 };
 
-const ThemeContext = createContext(defaultThemeContext);
-
-export default ThemeContext;
+export const ThemeContext = createContext<ThemeContextType>({
+  theme: 'light',
+  toggleTheme: () => {},
+});
