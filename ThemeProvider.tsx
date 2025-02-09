@@ -13,12 +13,9 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
-  // Update the document body background color when theme changes
   useEffect(() => {
     document.body.style.backgroundColor = theme === 'light' ? '#ffffff' : '#000000';
-    document.body.style.margin = '0';
-    document.body.style.padding = '0';
-    document.body.style.minHeight = '100vh';
+    
   }, [theme]);
 
   const value = {

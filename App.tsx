@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button, Text, View } from 'react-native';
+import { Button, Text, TouchableOpacity, View } from 'react-native';
 import { ThemeProvider } from './ThemeProvider';
 import { ThemeContext } from './ThemeContext';
 
@@ -15,7 +15,7 @@ const AppContent = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   
   return (
-    <View className="min-h-screen w-full items-center justify-center">
+    <View className="min-h-screen w-full justify-center">
       <Text 
         className={`text-lg mb-4 ${
           theme === 'light' ? 'text-black' : 'text-white'
@@ -24,9 +24,10 @@ const AppContent = () => {
         Hello, Theme Toggle!
       </Text>
       <Button 
-        title="Toggle Theme" 
+       title='Toggle Theme'
         onPress={toggleTheme}
       />
+ 
     </View>
   );
 };
